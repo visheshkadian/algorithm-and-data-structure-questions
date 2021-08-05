@@ -1,3 +1,16 @@
+/*
+input:chchokudai
+output:3
+explanation:We have three valid ways:
+
+ch ch okudai
+c hc hokudai
+ch chokudai
+
+while the following is invalid:
+
+c hc hokudai
+*/
 #include <bits/stdc++.h>
  
 using namespace std;
