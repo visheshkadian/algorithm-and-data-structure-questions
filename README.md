@@ -2,10 +2,13 @@
 hi, coders these are the questions which I found to be good
 
 Dynamic Programming Patterns
+
 link: https://dpp.guide/dynamic-programming-patterns-595815f2468d
+
 Leetcode link: https://leetcode.com/discuss/study-guide/458695/Dynamic-Programming-Patterns
 
 topic wise DP problems
+
 link:https://leetcode.com/discuss/study-guide/1000929/Solved-all-dynamic-programming-(dp)-problems-in-7-months.
 
 BITS HACKS AND TRICKS WITH PROPER APPROACH AND COMPLEXITIES
