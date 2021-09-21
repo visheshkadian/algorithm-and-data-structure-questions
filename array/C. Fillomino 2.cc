@@ -108,67 +108,32 @@ signed main() {
 //
 //
 
-#include<bits/stdc++.h>
-using namespace std;
-#define rep(i, f, t) for(int i = f; i <= t; ++i)
-#define rg register
-#define In inline
-#define ll long long
-#define pb push_back
-#define mp make_pair
-#define maxe(a)    (*max_element((a).begin(), (a).end()))
-#define mine(a)    (*min_element((a).begin(), (a).end()))
-using namespace std;
-#define MAX 505
-#define pi pair <int, int>
-#define ff first
-#define ss second
-#define all(a) a.begin(),a.end()
-#define MOD 1000000007
-const int maxn = 2e5 + 100;
+#include <bits/stdc++.h>
 using namespace std;
 
-inline int nxt() {
-	int x;
-	scanf("%d", &x);
-	return x;
-}
-
-void solve() {
-	int n = nxt();
-	vector<vector<int>> ans(n, vector<int>(n, 0));
-	vector<int> a(n);
-	generate(all(a), nxt);
-	for (int t = 1; t <= n; ++t) {
-		for (int i = 0; i < (int)a.size(); ++i) {
-			ans[t - 1 + i][i] = a[i];
-			//cout << a[i] << "->";
+int main(){
+	ios_base::sync_with_stdio(false), cin.tie(nullptr);
+	int n;
+	cin >> n;
+	vector<int> p(n);
+	for(int& x : p) cin >> x;
+	vector<vector<int> > a(n, vector<int>(n, -1));
+	for(int i = 0; i < n; i++){
+		int ci = i;
+		int cj = i;
+		for(int r = 0; r < p[i]; r++){
+			a[ci][cj] = p[i];
+			if(cj > 0 && a[ci][cj-1] == -1){
+				cj--;
+			} else {
+				ci++;
+			}
 		}
-		a.erase(find(all(a), t));
-		//cout << *find(all(a), t) << " ";
 	}
-	for (int i = 0; i < n; ++i) {
-		for (int j = 0; j <= i; ++j) {
-			cout << ans[i][j] << " ";
+	for(int i = 0; i < n; i++){
+		for(int j = 0; j <= i; j++){
+			cout << a[i][j] << ' ';
 		}
-		cout << "\n";
+		cout << '\n';
 	}
-}
-
-
-signed main() {
-#ifndef ONLINE_JUDGE
-	// for getting input from input.txt
-	freopen("input.txt", "r", stdin);
-	// for writing output to output.txt
-	freopen("output.txt", "w", stdout);
-#endif
-	ios::sync_with_stdio(false);
-	cin.tie(0);
-	ll t = 1;
-	//cin >> t;
-	while (t--) {
-		solve();
-	}
-
 }
